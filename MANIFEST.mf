@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Classpath: classes/
+Main-Class: com.potatocode.engine.boot.Initializer

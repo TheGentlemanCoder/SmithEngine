@@ -1,0 +1,11 @@
+# executable .jar files
+*.jar
+
+# Excel files
+*.xlsx
+
+# Compiled Java bytecode
+*.class
+
+# Mac storage files
+.DS_Store
