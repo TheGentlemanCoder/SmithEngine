@@ -8,4 +8,7 @@
 *.class
 
 # Mac storage files
-.DS_Store
+*.DS_Store
+
+# Weird file artifacts
+*._*

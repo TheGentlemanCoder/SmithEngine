@@ -20,10 +20,12 @@ public class Vector3D {
     }
 
     public double dot(Vector3D otherVector) {
-        return this.x * otherVector.getX() +
-               this.y * otherVector.getY() +
-               this.z * otherVector.getZ();
+        return this.x + otherVector.getX() +
+               this.y + otherVector.getY() +
+               this.z + otherVector.getZ();
     }
+    
+
 
     public Vector3D cross(Vector3D otherVector) {
         double i_component =  this.y*otherVector.getZ()-this.z*otherVector.getY();
@@ -34,9 +36,9 @@ public class Vector3D {
     }
 
     public Vector3D multiply(double scalar) {
-        return new Vector3D(this.x * scalar,
-                            this.y * scalar,
-                            this.z * scalar);
+        return new Vector3D(this.getX() * scalar,
+                          this.getY() * scalar,
+                          this.getZ() * scalar);
     }
 
     public Vector3D add(Vector3D otherVector) {
@@ -59,17 +61,6 @@ public class Vector3D {
         return otherVector.multiply(scalarComponent);
     }
 
-    public double mag() {
-        return Math.sqrt(this.x*this.x +
-                         this.y*this.y +
-                         this.z*this.z);
-    }
-
-    public Vector3D unit() {
-        double magnitude = this.mag();
-        return this.multiply(1.0/magnitude);
-    }
-
     public double getX() {
         return this.x;
     }
@@ -80,6 +71,17 @@ public class Vector3D {
 
     public double getZ() {
         return this.z;
+    }
+
+    public double mag() {
+        return Math.sqrt(this.x * this.x +
+                         this.y * this.y +
+                         this.z * this.z);
+    }
+
+    public Vector3D unit() {
+        double magnitude = this.mag();
+        return this.multiply(1.0/magnitude);
     }
 
     // Theta, relative to the positive x-axis, phi, relative to the negative z-axis.

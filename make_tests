@@ -1,0 +1,18 @@
+# make the unit tests for each of the packages in the SmithEngine library
+
+# Variables used to simplify complitation boilerplate
+JCC = javac
+JFLAGS = -cp classes/ -d classes/
+SRC = test/com/potatocode/engine/test
+
+# Test files to be compiled
+PROJECTION_FILES = TestAngle.java \
+                   TestVector3D.java
+PROJECTION_TEST_RUNNER = ProjectionSuiteTestRunner.java
+
+projection: $(PROJECTION_FILES)
+	# compile the test runner
+	$(JCC) $(JFLAGS) $(SRC)/projection/$(PROJECTION_TEST_RUNNER)
+
+$(PROJECTION_FILES):
+	$(JCC) $(JFLAGS) $(SRC)/projection/$^
